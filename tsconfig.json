@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "src/*": ["./src/*"],
-    }
+    },
+    "jsx": "react-jsx", // for React 17+. If 16-, use "react" instead
   }
 }
