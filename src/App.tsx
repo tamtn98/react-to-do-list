@@ -29,11 +29,6 @@ const App: React.FC = () => {
     setIsEdit(-1);
   };
 
-  const StyledBlock = styled.div``;
-  const StyledInlineBlock = styled.div`
-    display: inline-block;
-  `;
-
   const StyledList = styled.div`
     display: flex;
     flex-direction: column;
@@ -60,26 +55,16 @@ const App: React.FC = () => {
     }
   `;
 
-  const StyledDebug = styled.p.attrs((props) => ({
-    className: props.className,
-  }))`
-    color: red;
-  `;
-
   return (
     <>
-      <StyledInlineBlock>
-        <h1>What do I need to do?</h1>
-      </StyledInlineBlock>
-
-      <StyledDebug className="hidden">current isEdit: {isEdit}</StyledDebug>
+      <h1 className="inline-block">What do I need to do?</h1>
 
       <>
         {isTodosEmpty ? (
-          <StyledBlock>
+          <div>
             <i>Add something you might want, or need to work on.</i>
             <Button onClick={() => addNewItem()}>New</Button>
-          </StyledBlock>
+          </div>
         ) : (
           <>
             <Button onClick={() => addNewItem()}>New task</Button>

@@ -3,22 +3,23 @@ import { createRoot } from "react-dom/client";
 import styled from "styled-components";
 import "./index.css";
 
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-
 import App from "./App";
+
+import { Provider } from "react-redux";
+import store from "./store";
 
 const StyledContainer = styled.div`
   width: 80%;
   margin: 0 auto;
+  padding: 2rem 0;
 `;
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <StyledContainer>
-      <App />
-    </StyledContainer>
+    <Provider store={store}>
+      <StyledContainer>
+        <App />
+      </StyledContainer>
+    </Provider>
   </StrictMode>
 );
